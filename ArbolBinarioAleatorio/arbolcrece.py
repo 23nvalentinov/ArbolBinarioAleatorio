@@ -10,11 +10,11 @@ def arbol_binario_aleatorio(size):
     if size == 0: 
         return None
 
-    tamano_izquierda = random.randint(0, size-1) 
-    tamano_derecha = size - 1 - tamano_izquierda 
+    size_izquierda = random.randint(0, size-1) 
+    size_derecha = size - 1 - size_izquierda 
 
-    subarbol_izquierdo = arbol_binario_aleatorio(tamano_izquierda) 
-    subarbol_derecho = arbol_binario_aleatorio(tamano_derecha) 
+    subarbol_izquierdo = arbol_binario_aleatorio(size_izquierda) 
+    subarbol_derecho = arbol_binario_aleatorio(size_derecha) 
  
     raiz = Nodo(random.randint(0, 10)) 
  
