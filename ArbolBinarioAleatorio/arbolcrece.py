@@ -6,12 +6,12 @@ class Nodo:
         self.izquierda = None
         self.derecha = None
 
-def arbol_binario_aleatorio(tamano): 
-    if tamano == 0: 
+def arbol_binario_aleatorio(size): 
+    if size == 0: 
         return None
 
-    tamano_izquierda = random.randint(0, tamano-1) 
-    tamano_derecha = tamano - 1 - tamano_izquierda 
+    tamano_izquierda = random.randint(0, size-1) 
+    tamano_derecha = size - 1 - tamano_izquierda 
 
     subarbol_izquierdo = arbol_binario_aleatorio(tamano_izquierda) 
     subarbol_derecho = arbol_binario_aleatorio(tamano_derecha) 
