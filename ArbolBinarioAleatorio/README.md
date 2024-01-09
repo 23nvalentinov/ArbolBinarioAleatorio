@@ -1,0 +1,1 @@
+Con este código he conseguido realizar un árbol binario que se genera a raíz de numeros aleatorios comprendidos entre el 0 y el 10 pero a partir de allí no he sabido continuar para completar el propostio del ejercicio.
