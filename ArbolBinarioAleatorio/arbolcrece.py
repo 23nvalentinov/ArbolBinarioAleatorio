@@ -1,35 +1,34 @@
-import random 
+import random as rndm
 
-class Node: 
-	def __init__(self, value): 
-		self.value = value 
-		self.left = None
-		self.right = None
+class MiNodo: 
+    def __init__(self, valor): 
+        self.valor = valor 
+        self.izquierda = None
+        self.derecha = None
 
-def abrol_binario_random(size): 
-	if size == 0: 
-		return None
+def arbol_binario_aleatorio(tamano): 
+    if tamano == 0: 
+        return None
 
-	left_size = random.randint(0, size-1) 
-	right_size = size - 1 - left_size 
+    tamano_izquierda = rndm.randint(0, tamano-1) 
+    tamano_derecha = tamano - 1 - tamano_izquierda 
 
-	left_subtree = abrol_binario_random(left_size) 
-	right_subtree = abrol_binario_random(right_size) 
+    subarbol_izquierdo = arbol_binario_aleatorio(tamano_izquierda) 
+    subarbol_derecho = arbol_binario_aleatorio(tamano_derecha) 
  
-	root = Node(random.randint(0, 10)) 
+    raiz = MiNodo(rndm.randint(0, 10)) 
  
-	root.left = left_subtree 
-	root.right = right_subtree 
+    raiz.izquierda = subarbol_izquierdo 
+    raiz.derecha = subarbol_derecho 
 
-	return root 
+    return raiz 
 
+def imprimir_arbol(nodo, nivel=0): 
+    if nodo is not None: 
+        imprimir_arbol(nodo.derecha, nivel + 1) 
+        print(" " * 4 * nivel + "->", nodo.valor) 
+        imprimir_arbol(nodo.izquierda, nivel + 1) 
 
-def print_tree(node, level=0): 
-	if node is not None: 
-		print_tree(node.right, level + 1) 
-		print(" " * 4 * level + "->", node.value) 
-		print_tree(node.left, level + 1) 
+arbol = arbol_binario_aleatorio(8) 
+imprimir_arbol(arbol)
 
-
-tree = abrol_binario_random(8) 
-print_tree(tree) 
